@@ -1,0 +1,41 @@
+<style>
+    #miodiv
+    {
+    height: 300px;
+    width: 400px;
+    background: beige;
+    }
+    </style>
+    <body>
+        <strong>  <p id="miocountdown" style="color: black;
+            font-size: 50px ;
+            font-family: fantasy;
+            position: absolute; /* 2 */ top: 50%; /* 3 */ transform: translate(0, -50%)
+
+            left: 50%;
+            right: 50%;
+            "> 
+            
+            
+            
+            </p>  
+    
+    
+    </button>
+    </div>
+    <script>
+    const miointervallo=setInterval(startcountdown,1000)
+    let countdown=3;
+    function startcountdown()
+    {
+    document.getElementById("miocountdown").innerHTML=countdown.toString();
+    countdown--;
+    if (countdown==-1)
+    {
+    clearInterval(miointervallo)
+    document.getElementById("miocountdown").innerHTML="Start";
+    }
+    }
+    </script>
+    </body>
+    </html>
