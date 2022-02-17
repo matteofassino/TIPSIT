@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIOCO DADI</title>
+<style>
+.button{
+    
+  width: 300px;
+  height: 80px;
+  background: rgb(255, 30, 30);
+  border-radius: 6px;
+  transition: all .3s cubic-bezier(0.67, 0.17, 0.40, 0.83);
+  color: rgb(0, 0, 0);
+  font-size: xx-large;
+  font-family: 'arial';
+
+}
+.txt{
+    font-size: xx-large;
+}
+
+</style>
+</head>
+
+
+
+<body>
+
+    
+    <button class="button" onclick="lanciodado(),lanciodado2()">Lancia i dadi</button>
+   
+    <p style="right: 60%;"class="txt;">Se esce una coppia  si agggiungono +3 punti, se esce un trio +10 punti, altrimenti  si toglie -1 punto.</p>
+
+    <p class="txt">Primo dado:</p>
+    <p id="out1" class="txt"></p>
+
+    <p class="txt">Secondo dado:</p>
+    <p id="out2" class="txt"></p>
+
+    <p class="txt">Terzo dado:</p>
+    <p id="out3" class="txt"></p>
+
+
+    <p class="txt">Punti:</p>
+    <p class="txt"id="punti"></p>
+
+  
+</body>
+<script>
+
+let punti= 50;
+
+
+    function lanciodado()
+    {
+
+    //primo dado
+
+    let casuale=0;
+    let dado=0;
+    let lancio=0;
+    casuale=Math.random();
+    dado=casuale*5;
+    lancio=Math.round(dado)+1;
+    document.getElementById("out1").innerHTML=lancio;
+
+    //secondo dado
+
+    let casuale2=0;
+    let dado2=0;
+    let lancio2=0;
+    casuale2=Math.random();
+    dado2=casuale2*5;
+    lancio2=Math.round(dado2)+1;
+    document.getElementById("out2").innerHTML=lancio2;
+
+    //terzo dado
+
+    let casuale3=0;
+    let dado3=0;
+    let lancio3=0;
+    casuale3=Math.random();
+    dado3=casuale3*5;
+    lancio3=Math.round(dado3)+1;
+    document.getElementById("out3").innerHTML=lancio3;
+
+
+   punti--;
+    
+   if(lancio==lancio2 || lancio2==lancio3 ||  lancio==lancio3)
+   {
+   punti=punti+3;
+   }
+
+    if(lancio==lancio2 && lancio==lancio3 && lancio2==lancio3)
+   {
+   punti=punti+10;
+   }
+
+   document.getElementById("punti").innerHTML=punti;
+}
+ 
+
+</script>
+</html>
