@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://replit.com/@DavideMartinel1/Lavoro-TPSIT#style.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat Subrayada' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://assets.codepen.io/605876/Blender-Pro-Bold.otf" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
+<style>
+   #out3 {
+  font-size: 50px;
+  font-family: 'Bebas Neue', cursive;
+  float: center;
+  text-align: center;
+  color: white;
+  
+}
+
+  #generalBox{
+      border:2px solid white;
+      width: 500px;
+      height : 720px;
+      padding : 0px;
+      background-color: #4b86b4;
+      }
+      #button
+{
+  width: 200px;
+  height: 100px;
+  border: 2px;
+  background-color: black;
+
+}
+#button::hover
+{
+  background-color: pink;
+}
+
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #2a4d69;
+}
+
+button, button::after {
+  width: 500px;
+  height: 86px;
+  font-size: 40px;
+  font-family: 'Staatliches', cursive;
+  background: linear-gradient(45deg, transparent 5%, #63ace5 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  line-height: 88px;
+  box-shadow: 6px 0px 0px #00E6F6;
+  outline: transparent;
+  position: relative;
+}
+
+button::after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  
+  content: 'LANCIA IL DADO';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #4b86b4 5%);
+  text-shadow: -3px -3px 0px #ff1493, 3px 3px 0px #00E6F6;
+  clip-path: var(--slice-0);
+}
+
+button:hover::after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+
+
+#Box2{
+  width: 30px;
+      height : 30px;
+      background-color: #4b86b4;
+      border-radius: 50%;
+      margin: 240px;
+      top: 50px;
+      float: left;
+      position: relative;
+
+      }
+
+    
+  #Box3{
+      border:2px solid white;
+      width: 300px;
+      height : 720px;
+      padding : 0px;
+      background-color: #ff0000;
+      }
+
+</style>
+  </head>
+
+<body>
+   
+<div class="box1">
+
+</div>
+
+
+<div id ="generalBox">
+  <button id="&"class="&" onclick="lanciodado();">lancia il dado</button>
+
+    
+
+
+<div class="div1">
+<p class="text" id="out3" ></p>
+<p class="text" id="out6"></p>
+<p class="text" id="out4" ></p>
+ <div id="Box2" class="Box2">
+</div>
+</div>
+   <script>
+
+     function lanciodado() {
+let dado=0;
+dado=Math.round((Math.random()*5)+1);
+document.getElementById("out3").innerHTML=dado+ " ";
+if(dado<=2){
+document.getElementById("Box2").style.backgroundColor="red";}
+else {
+document.getElementById("Box2").style.backgroundColor="#4b86b4";}
+
+
+
+        //genera un numero compreso fra 0 e 1. 0 è incluso 1 è escluso
+   
+
+      
+        document.getElementById("out4").innerHTML=punti;
+       
+        if(out6==out3)
+        {
+             document.body.appendChild(x);
+             punti=punti+3;
+        }
+        else
+        {
+            punti=punti-1;
+        }
+        document.getElementById("out4").innerHTML=punti;
+    return dado;  
+    }
+
+</script>
+</head>
+</body>
+</html>
+
