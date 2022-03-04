@@ -1,32 +1,80 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>conversione grassi e calorie</h1>
+<h1>grammi e calorie </h1>
 <form id="frm1" >
- inserisci grassi: <input type="text" name="Hbase" value="0"><br>
- calorie fornite:<input type="text" name="Harrivo" value="0"><br>
+ GRASSI: <input type="text" name="Hbase" value="0"><br>
 
- <!-- <input type="submit" value="Input dati Trekking">-->
+ CALORIE:<input type="text" name="Harrivo" value="0"><br>
+
+ CARBOIDRATI:<input type="text" name="Hsomma" value="0"><br>
+
 </form>
 <style>
-#miodiv{
-    
-    
+    .ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+ul li {
+    box-sizing: border-box;
+    width: 15em;
+    height: 3em;
+    font-size: 10px;
+    border-radius: 0.5em;
+    margin: 0.5em;
+    box-shadow: 0 0 1em rgba(0,0,0,0.2);
+    color: white;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    line-height: 3em;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 
+
+ul li:nth-child(odd):hover {
+    transform: perspective(200px) rotateY(45deg);
+    padding-left: 5%;
+}
+
+ul li:nth-child(even):hover {
+    transform: perspective(300px) rotateY(-45deg);
+    padding-right: 5%;
+}
+
+
+#miodiv 
+
+
 </style>
+
+<div id="div2">
 <div id="miodiv">
-<p>CALORIE E GRASSI:</p>
-<button onclick="myFunction()">numero  delle calorie:</button>
+<p></p>
+<ul>
+<li><button class="button" onclick="myFunction()" class="ul"> converti in kcalorie</button></li> 
+</ul>
+
+<ul>
+<li><button class="button" onclick="ckal()" class="ul"> converti  in calorie</button></li> 
+</ul>
+
 
 <p>grassi:</p>
 <p id="base"></p>
 <p>calorie:</p>
 <p id="arrivo"></p>
+<p>carboidrati:</p>
+<p id="somma"></p>
 
-CONVERSIONE
+grassi in ckal
 <p id="demo"></p>
+carboidrati in calorie
+<p id="demi"></p>
+</div>
+</div>
 <script>
 function myFunction() {
 
@@ -37,12 +85,32 @@ document.getElementById("base").innerHTML =base;
 
 var arrivo=x.elements[1].value;
 document.getElementById("arrivo").innerHTML =arrivo;
-  
-  document.getElementById("demo").innerHTML =Dislivello(base,arrivo);
+
+document.getElementById("demo").innerHTML =Dislivello(base,arrivo);
+ 
+}
+function ckal(){
+
+    
+var x = document.getElementById("frm1");
+
+var somma=x.elements[2].value;
+document.getElementById("somma").innerHTML =somma;
+
+var arrivo=x.elements[1].value;
+document.getElementById("arrivo").innerHTML =arrivo;
+
+document.getElementById("demi").innerHTML =altezza(somma,arrivo);
 }
 
 function Dislivello(numero1,numero2){
 return numero1*numero2;
 }
+function altezza(numero2,numero3){
+return numero2*numero3;
+}
 
 </script>
+
+</body>
+</html>
