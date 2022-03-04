@@ -1,78 +1,45 @@
 <!DOCTYPE html>
 <html>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+ <style>
+body{
+font-size: 25px;
+background-color: rgb(8, 224, 80);
+font-family: 'Fredoka One', cursive;
+}
+
+
+
+
+ </style>
 <body>
-<h1>grammi e calorie </h1>
+
 <form id="frm1" >
- GRASSI: <input type="text" name="Hbase" value="0"><br>
+    <p>GRASSI: </p><input type="text" name="Hbase" value="0"><br>
 
- CALORIE:<input type="text" name="Harrivo" value="0"><br>
+    <p> CALORIE:</p><input type="text" name="Harrivo" value="9"><br>
 
- CARBOIDRATI:<input type="text" name="Hsomma" value="0"><br>
+    <p> CARBOIDRATI:</p><input type="text" name="Hsomma" value="7"><br>
+
+    <p> PROTEINE:</p><input type="text" name="Huguale" value="4"><br>
 
 </form>
-<style>
-    .ul {
-    padding: 0;
-    list-style-type: none;
-}
 
-ul li {
-    box-sizing: border-box;
-    width: 15em;
-    height: 3em;
-    font-size: 10px;
-    border-radius: 0.5em;
-    margin: 0.5em;
-    box-shadow: 0 0 1em rgba(0,0,0,0.2);
-    color: white;
-    font-family: sans-serif;
-    text-transform: capitalize;
-    line-height: 3em;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-
-
-ul li:nth-child(odd):hover {
-    transform: perspective(200px) rotateY(45deg);
-    padding-left: 5%;
-}
-
-ul li:nth-child(even):hover {
-    transform: perspective(300px) rotateY(-45deg);
-    padding-right: 5%;
-}
-
-
-#miodiv 
-
-
-</style>
 
 <div id="div2">
 <div id="miodiv">
-<p></p>
-<ul>
-<li><button class="button" onclick="myFunction()" class="ul"> converti in kcalorie</button></li> 
-</ul>
 
-<ul>
-<li><button class="button" onclick="ckal()" class="ul"> converti  in calorie</button></li> 
-</ul>
+<button onclick="myFunction()" > Converti </button>
 
 
-<p>grassi:</p>
-<p id="base"></p>
-<p>calorie:</p>
-<p id="arrivo"></p>
-<p>carboidrati:</p>
-<p id="somma"></p>
-
-grassi in ckal
+<p>Grassi in kcal:</p>
 <p id="demo"></p>
-carboidrati in calorie
+<p>Carboidrati in calorie:</p>
 <p id="demi"></p>
+<p>Proteine:</p>
+<p id="demio"></p>
 </div>
 </div>
 <script>
@@ -81,35 +48,44 @@ function myFunction() {
 var x = document.getElementById("frm1");
 
 var base=x.elements[0].value;  
-document.getElementById("base").innerHTML =base;
-
 var arrivo=x.elements[1].value;
-document.getElementById("arrivo").innerHTML =arrivo;
+
 
 document.getElementById("demo").innerHTML =Dislivello(base,arrivo);
  
-}
-function ckal(){
+
 
     
 var x = document.getElementById("frm1");
 
 var somma=x.elements[2].value;
-document.getElementById("somma").innerHTML =somma;
+var base=x.elements[0].value;  
 
-var arrivo=x.elements[1].value;
-document.getElementById("arrivo").innerHTML =arrivo;
 
-document.getElementById("demi").innerHTML =altezza(somma,arrivo);
+document.getElementById("demi").innerHTML = altezza(somma,base);
+
+
+
+var x = document.getElementById("frm1");
+
+var base=x.elements[0].value;  
+var uguale=x.elements[3].value;
+
+
+document.getElementById("demio").innerHTML = Dislivellio (base,uguale);
+ 
 }
 
 function Dislivello(numero1,numero2){
 return numero1*numero2;
 }
-function altezza(numero2,numero3){
-return numero2*numero3;
+function altezza(numero2,arrivo){
+return numero2*arrivo;
 }
 
+function Dislivellio(numero3,uguale){
+return numero3*uguale;
+}
 </script>
 
 </body>
