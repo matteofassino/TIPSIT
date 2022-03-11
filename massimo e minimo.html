@@ -1,65 +1,60 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Array</title>
+    <title>Document</title>
 </head>
 <body>
     <button onclick="caricaarray()">Carica Array</button>
-    <button onclick="caricaMassimo()">Trova il massimo</button>
-    <button onclick="caricaMinimo()">Trova il minimo</button>
+    <button onclick="massimo()">Trova il Massimo</button>
+    <button onclick="minimo()"> Trova il Minimo</button>
     <p id="out"></p>
-    <p id="out2">Massimo: </p>
-    <p id="out3">Minimo: </p>
+    <p id="minimo2"></p>
+    <p id="massimo2"></p>
+  
+</body>
 
-    <script>
-        let arraydatiCasuali=[];
-        let max=0;
-        let min=1000;
-        indice=0;
-        //dichiaro un array e lo inizializzo con numeri casuali da 0 a 999
-
-        function caricaarray(){
-            let numerocasuale=-1;
-            for(let i=0;i<1000;i++)
+<script>
+    let arraydatiCasuali=[];
+    let numerocasuale = -1;
+    let i, minp, maxp;
+    let min=10, max=0;
+    let posizione = 0;
+    function caricaarray()
+    {
+            for (i=0; i<1000; i++)
             {
-                numerocasuale=parseInt(Math.random()*1000);
+                numerocasuale = parseInt(Math.random()*1000);
                 arraydatiCasuali.push(numerocasuale);
                 document.getElementById("out").innerHTML+=arraydatiCasuali[i]+" ";
-            }
-        }
-
-        function caricaMassimo(){
-            for(let i=0;i<1000;i++)
-            {
-                if(arraydatiCasuali[i]>max)
+                    posizione++
+                if (numerocasuale<min)
                 {
-                    max=arraydatiCasuali[i];
-                    indice=i;
+                   min = numerocasuale;
+                   minp = posizione;
+                }
+
+                if (numerocasuale>max)
+                {
+
+                    max = numerocasuale;
+                    maxp = posizione;
                 }
             }
-            document.getElementById("out2").innerHTML+=max+" si trova in posizione "+indice;
+    }
 
+    function minimo()
+    {
+        document.getElementById("minimo2").innerHTML = "Il minimo è " + min + " ,  si trova nella posizione numero " + minp;
+    }
 
-        }
+    function massimo()
+    {
+        document.getElementById("massimo2").innerHTML = "Il massimo è " + max + " , si trova nella posizione numero " + maxp;;
 
-        function caricaMinimo(){
-            for(let i=0;i<1000;i++)
-            {
-                if(arraydatiCasuali[i]<min)
-                {
-                    min=arraydatiCasuali[i];
-                    indice=i;
-                }
-            }
-            document.getElementById("out3").innerHTML+=min+" si trova in posizione "+indice;
-
-
-        }
-
-    </script>
-
-</body>
+    }
+</script>
 </html>
